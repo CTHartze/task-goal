@@ -28,5 +28,21 @@ router.get('/api/items', async (req, res)=>{
 })
 
 
+//updates item
+router.put('/api/item/:id', async (req, res)=>{
+    try{
+        //finds item by id and updates it
+        const updateItem = await todoItemsModel.findByIdAndUpdate(req.params.id, {$set: req.body});
+        res.status(200).json('Item Updated');
+    }catch(err){
+        res.json(err);
+    }
+})
+
+
+
+
+
+
 //exports router
 module.exports = router;
