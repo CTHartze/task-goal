@@ -40,8 +40,16 @@ router.put('/api/item/:id', async (req, res)=>{
 })
 
 
-
-
+//deletes item from database
+router.delete('/api/item/:id', async (req, res)=>{
+    try{
+        //finds item by id and deletes it
+        const deleteItem = await todoItemsModel.findByIdAndDelete(req.params.id);
+        res.status(200).json('Item Deleted');
+    }catch(err){
+        res.json(err);
+    }
+})
 
 
 //exports router

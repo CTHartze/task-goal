@@ -18,3 +18,8 @@ Content-Type: application/json
 {
     "item": "This is the second todo item updated!"
 }
+
+###
+
+DELETE http://localhost:5500/api/item/669eb02c617c16ba8b403d9a
+Content-Type: application/json
