@@ -1,9 +1,10 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [itemText, setItemText] = useState('')
+  const [itemText, setItemText] = useState('');
+  const [listItems, setListItems] = useState([]);
 
   //adds new item to database
   const addItem = async (e) => {
@@ -17,6 +18,19 @@ function App() {
     }
   }
 
+//fetch all todo items from database -- useEffect hook
+useEffect(()=>{
+  const getItemsList = async () => {
+    try{
+      const res = await axios.get('http://localhost:5500/api/items')
+      setListItems(res.data)
+    }catch(err){
+      console.log(err);
+    }
+  }
+  getItemsList()
+},[])
+
 
   return (
     <div className="App">
@@ -26,21 +40,18 @@ function App() {
         <button type="submit">Add</button>
       </form>
       <div className="todo-listItems">
-        <div className="todo-item">
-          <p className="item-content">this is item 1</p>
-          <button className="update-item">Edit</button>
-          <button className="delete-item">Remove</button>
-        </div>
-        <div className="todo-item">
-          <p className="item-content">this is item 2</p>
-          <button className="update-item">Edit</button>
-          <button className="delete-item">Remove</button>
-        </div>
-        <div className="todo-item">
-          <p className="item-content">this is item 3</p>
-          <button className="update-item">Edit</button>
-          <button className="delete-item">Remove</button>
-        </div>
+        {
+          listItems.map(item => (
+          <div className="todo-item">
+            <p className="item-content">{item.item}</p>
+            <button className="update-item">Edit</button>
+            <button className="delete-item">Remove</button>
+          </div>
+          ))
+        }
+
+
+
       </div>
     </div>
   );
