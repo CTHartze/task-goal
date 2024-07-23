@@ -11,7 +11,7 @@ function App() {
     e.preventDefault();
     try{
       const res = await axios.post('http://localhost:5500/api/item', {item: itemText})
-      console.log(res);
+      setListItems(prev => [...prev, res.data]);
       setItemText('');
     }catch(err){
       console.log(err);
@@ -24,12 +24,24 @@ useEffect(()=>{
     try{
       const res = await axios.get('http://localhost:5500/api/items')
       setListItems(res.data)
+      console.log('render')
     }catch(err){
       console.log(err);
     }
   }
   getItemsList()
-},[])
+},[]);
+
+//deletes item when click on remove
+const deleteItem = async (id) => {
+  try{
+    const res = await axios.delete(`http://localhost:5500/api/item/${id}`)
+    const newListItems = listItems.filter(item=> item._id !== id);
+    setListItems(newListItems);
+  }catch(err){
+    console.log(err);
+  }
+}
 
 
   return (
@@ -45,7 +57,7 @@ useEffect(()=>{
           <div className="todo-item">
             <p className="item-content">{item.item}</p>
             <button className="update-item">Edit</button>
-            <button className="delete-item">Remove</button>
+            <button className="delete-item" onClick={()=>{deleteItem(item._id)}}>Remove</button>
           </div>
           ))
         }
