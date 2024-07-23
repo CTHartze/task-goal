@@ -10,19 +10,19 @@ function App() {
       </form>
       <div className="todo-listItems">
         <div className="todo-item">
-          <p>this is item 1</p>
-          <button>Edit</button>
-          <button>Remove</button>
+          <p className="item-content">this is item 1</p>
+          <button className="update-item">Edit</button>
+          <button className="delete-item">Remove</button>
         </div>
         <div className="todo-item">
-          <p>this is item 2</p>
-          <button>Edit</button>
-          <button>Remove</button>
+          <p className="item-content">this is item 2</p>
+          <button className="update-item">Edit</button>
+          <button className="delete-item">Remove</button>
         </div>
         <div className="todo-item">
-          <p>this is item 3</p>
-          <button>Edit</button>
-          <button>Remove</button>
+          <p className="item-content">this is item 3</p>
+          <button className="update-item">Edit</button>
+          <button className="delete-item">Remove</button>
         </div>
       </div>
     </div>
