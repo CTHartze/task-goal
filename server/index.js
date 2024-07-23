@@ -1,12 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 //converts data into json format
 app.use(express.json());
 //Port
 const PORT = process.env.PORT || 5500;
+
+//use cors
+app.use(cors());
 
 //imports routes
 const TodoItemRoute = require('./routes/todoItems');
