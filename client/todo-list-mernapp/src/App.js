@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <form>
+      <h1>Task Checklist</h1>
+      <form className="form">
         <input type="text" placeholder='Add Checklist Item' />
         <button type="submit">Add</button>
       </form>
