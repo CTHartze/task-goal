@@ -12,7 +12,7 @@ function App() {
   const addItem = async (e) => {
     e.preventDefault();
     try{
-      const res = await axios.post('http://localhost:5500/api/item', {item: itemText})
+      const res = await axios.post('https://task-goal-d2bfd123f229.herokuapp.com//api/item', {item: itemText})
       setListItems(prev => [...prev, res.data]);
       setItemText('');
     }catch(err){
@@ -24,7 +24,7 @@ function App() {
 useEffect(()=>{
   const getItemsList = async () => {
     try{
-      const res = await axios.get('http://localhost:5500/api/items')
+      const res = await axios.get('https://task-goal-d2bfd123f229.herokuapp.com//api/items')
       setListItems(res.data)
       console.log('render')
     }catch(err){
@@ -37,7 +37,7 @@ useEffect(()=>{
 //deletes item when click on remove
 const deleteItem = async (id) => {
   try{
-    const res = await axios.delete(`http://localhost:5500/api/item/${id}`)
+    const res = await axios.delete(`https://task-goal-d2bfd123f229.herokuapp.com//api/item/${id}`)
     const newListItems = listItems.filter(item=> item._id !== id);
     setListItems(newListItems);
   }catch(err){
@@ -49,7 +49,7 @@ const deleteItem = async (id) => {
 const updateItem = async (e) => {
   e.preventDefault()
   try{
-    const res = await axios.put(`http://localhost:5500/api/item/${isUpdating}`, {item: updateItemText})
+    const res = await axios.put(`https://task-goal-d2bfd123f229.herokuapp.com//api/item/${isUpdating}`, {item: updateItemText})
     console.log(res.data)
     const updatedItemIndex = listItems.findIndex(item => item._id === isUpdating);
     const updateItem = listItems[updatedItemIndex].item = updateItemText;
