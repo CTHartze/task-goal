@@ -50,9 +50,11 @@ const updateItem = async (e) => {
   e.preventDefault()
   try{
     const res = await axios.put(`http://localhost:5500/api/item/${isUpdating}`, {item: updateItemText})
+    console.log(res.data)
+    const updatedItemIndex = listItems.findIndex(item => item._id === isUpdating);
+    const updateItem = listItems[updatedItemIndex].item = updateItemText;
     setUpdateItemText('');
     setIsUpdating('');
-    console.log(res.data)
   }catch(err){
     console.log(err);
   }
