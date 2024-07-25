@@ -62,16 +62,16 @@ const updateItem = async (e) => {
 //need to show input field by updated/edited item
 const renderUpdateForm = () =>(
   <form className="update-form" onSubmit={(e)=>{updateItem(e)}} >
-    <input className="update-new-input" type="text" placeholder="New Item" onChange={e=>{setUpdateItemText(e.target.value)}} value={updateItemText}/>
+    <input className="update-new-input" type="text" placeholder="New Task or Goal" onChange={e=>{setUpdateItemText(e.target.value)}} value={updateItemText}/>
     <button className="update-new-btn" type="submit">Edit</button>
   </form>
 )
 
   return (
     <div className="App">
-      <h1>Task Checklist</h1>
+      <h1>Task/Goal List</h1>
       <form className="form" onSubmit={e => addItem(e)}>
-        <input type="text" placeholder='Add Checklist Item' onChange={e => {setItemText(e.target.value)} } value={itemText} />
+        <input type="text" placeholder='Add Task or Goal' onChange={e => {setItemText(e.target.value)} } value={itemText} />
         <button type="submit">Add</button>
       </form>
       <div className="todo-listItems">
