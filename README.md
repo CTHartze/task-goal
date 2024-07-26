@@ -1,6 +1,6 @@
 # Task/Goal Project
 
-This project is a task management application designed to help users set and complete their tasks/goals. 
+This project is a task management application designed to help users set and complete their tasks/goals. ([Video Demo](https://youtu.be/DthwrfEyMUw))
 
 ## Table of Contents
 
