@@ -1,6 +1,8 @@
 # Task/Goal Project
 
-This project is a task management application designed to help users set and complete their tasks/goals. ([Video Demo](https://youtu.be/DthwrfEyMUw))
+This project is a task management application designed to help users set and complete their tasks/goals.
+ - [App link](https://taskgoal-app.netlify.app/)
+ - [Video Demo](https://youtu.be/DthwrfEyMUw)
 
 ## Table of Contents
 
