@@ -1,8 +1,9 @@
 # Task/Goal Project
 
 This project is a task management application designed to help users set and complete their tasks/goals.
- - [App link](https://taskgoal-app.netlify.app/)
- - [Video Demo](https://youtu.be/DthwrfEyMUw)
+
+- [App link](https://task-goal-frontend.onrender.com)
+- [Video Demo](https://youtu.be/DthwrfEyMUw)
 
 ## Table of Contents
 
@@ -45,7 +46,7 @@ The project is divided into several key components:
 
 ## Access or Setup Instructions
 
-Access the app link [here](https://taskgoal-app.netlify.app/).
+Access the app link [here](https://task-goal-frontend.onrender.com/).
 
 Follow these steps to set up the project on your local machine:
 
@@ -57,46 +58,50 @@ Follow these steps to set up the project on your local machine:
 ### Installation
 
 1. **Clone the repository:**
-    ```sh
-    git clone https://github.com/CTHartze/task-goal.git
-    cd task-goal
-    ```
+
+   ```sh
+   git clone https://github.com/CTHartze/task-goal.git
+   cd task-goal
+   ```
 
 2. **Install frontend dependencies:**
-    ```sh
-    cd server
-    npm install
-    ```
+
+   ```sh
+   cd server
+   npm install
+   ```
 
 3. **Install backend dependencies:**
    In another window:
    ```sh
     cd client/todo-list-mernapp
     npm install
-    ```
-   
+   ```
+
 ### Running the Application
 
 1. **Start the backend server:**
-    ```sh
-    cd server
-    npm start
-    ```
+
+   ```sh
+   cd server
+   npm start
+   ```
 
 2. **Start the frontend development server:**
    In another window:
-    ```sh
-    cd client/todo-list-mernapp
-    npm start
-    ```
+   ```sh
+   cd client/todo-list-mernapp
+   npm start
+   ```
 
 The application should now be running at `http://localhost:3000` (frontend).
 
 ## Usage Guidelines
 
 1.  **Create Tasks:**
+
     - Use the form to add new tasks.
 
-3. **Manage Tasks:**
+2.  **Manage Tasks:**
     - View your tasks in a list.
     - Edit or delete tasks as needed.
